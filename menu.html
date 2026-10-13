@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu | Brew & Bite CEC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
+  <script type="module" src="https://pyscript.net/releases/2024.11.1/core.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">Brew &amp; Bite CEC</a>
+    <nav aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="menu.html" aria-current="page">Menu</a>
+      <a href="order.html">Order calculator</a>
+      <a href="preorder.html">Pre-order</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Menu</h1>
+    <div class="filters" role="group" aria-label="Filter menu by category">
+      <button class="filter-btn active" data-category="All" aria-pressed="true">All</button>
+      <button class="filter-btn" data-category="Drinks" aria-pressed="false">Drinks</button>
+      <button class="filter-btn" data-category="Cookies" aria-pressed="false">Cookies</button>
+      <button class="filter-btn" data-category="Combos" aria-pressed="false">Combos</button>
+    </div>
+    <p id="menu-count" class="muted" aria-live="polite"></p>
+    <div id="menu-grid" class="menu-grid"></div>
+  </main>
+  <footer class="site-footer">
+    <p>Brew &amp; Bite CEC · Leon Kilat St., Cebu City · Event-Driven Programming final project</p>
+  </footer>
+  <script type="py" src="./menu.py" config="./pyscript.toml"></script>
+</body></html>
