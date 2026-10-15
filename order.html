@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Order calculator | Brew & Bite CEC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
+  <script type="module" src="https://pyscript.net/releases/2024.11.1/core.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">Brew &amp; Bite CEC</a>
+    <nav aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="order.html" aria-current="page">Order</a>
+      <a href="preorder.html">Pre-order</a>
+    </nav>
+  </header>
+  <main class="narrow">
+    <h1>Order calculator</h1>
+    <p class="muted">Set a quantity for each item. Your total updates as you type.</p>
+    <div id="order-list" class="order-list"></div>
+
+    <label class="check"><input type="checkbox" id="student"> I'm a CEC student (10% off)</label>
+
+    <dl class="totals">
+      <div><dt>Subtotal</dt><dd id="subtotal">₱0.00</dd></div>
+      <div><dt>Discount</dt><dd id="discount">-₱0.00</dd></div>
+      <div class="grand"><dt>Total</dt><dd id="total">₱0.00</dd></div>
+    </dl>
+
+    <label class="field">Your name
+      <input type="text" id="customer-name" autocomplete="name">
+    </label>
+    <p id="order-message" class="msg" role="alert"></p>
+    <div class="hero-actions">
+      <button id="place-order" class="btn primary" type="button">Place order</button>
+      <button id="clear-order" class="btn" type="button">Clear</button>
+    </div>
+    <section id="receipt" class="receipt" hidden aria-live="polite"></section>
+  </main>
+  <footer class="site-footer">
+    <p>Brew &amp; Bite CEC · Leon Kilat St., Cebu City · Event-Driven Programming final project</p>
+  </footer>
+  <script type="py" src="./order.py" config="./pyscript.toml"></script>
+</body></html>

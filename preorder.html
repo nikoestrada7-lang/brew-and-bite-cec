@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pre-order | Brew & Bite CEC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
+  <script type="module" src="https://pyscript.net/releases/2024.11.1/core.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">Brew &amp; Bite CEC</a>
+    <nav aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="order.html">Order</a>
+      <a href="preorder.html" aria-current="page">Pre-order</a>
+    </nav>
+  </header>
+  <main class="narrow">
+    <h1>Pre-order through Messenger</h1>
+    <p class="muted">Fill in the form, then copy the summary and send it to our Messenger page.</p>
+    <form id="preorder-form" novalidate>
+      <label class="field">Your name
+        <input type="text" id="po-name" autocomplete="name">
+      </label>
+      <label class="field">Messenger name
+        <input type="text" id="po-messenger">
+      </label>
+      <label class="field">Item
+        <select id="po-item"></select>
+      </label>
+      <label class="field">Quantity
+        <input type="number" id="po-qty" min="1" max="20" value="1" inputmode="numeric">
+      </label>
+      <label class="field">Pickup time
+        <select id="po-time"></select>
+      </label>
+      <label class="field">Notes (optional)
+        <textarea id="po-notes" rows="3" placeholder="Less ice, extra cookie bag, etc."></textarea>
+      </label>
+      <p id="po-estimate" class="estimate" aria-live="polite"></p>
+      <p id="po-errors" class="msg error" role="alert"></p>
+      <button class="btn primary" type="submit">Create pre-order summary</button>
+    </form>
+    <section id="po-confirmation" class="receipt" hidden aria-live="polite">
+      <h3>Your pre-order summary</h3>
+      <p id="po-summary"></p>
+      <p class="muted">Copy this message and send it to our Messenger page to confirm.</p>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p>Brew &amp; Bite CEC · Leon Kilat St., Cebu City · Event-Driven Programming final project</p>
+  </footer>
+  <script type="py" src="./preorder.py" config="./pyscript.toml"></script>
+</body></html>
