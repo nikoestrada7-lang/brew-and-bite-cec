@@ -92,3 +92,21 @@ input[type="text"], input[type="number"], select, textarea {
 .site-footer { text-align: center; padding: 1.5rem 1rem; color: var(--muted); font-size: .9rem; border-top: 1px solid var(--line); }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* NEW: menu card hover, description -> product image */
+.menu-item { position: relative; overflow: hidden; min-height: 200px; }
+.menu-info { display: flex; flex-direction: column; gap: .35rem; flex: 1; transition: opacity .35s ease; }
+.menu-photo {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; transform: scale(1.05); pointer-events: none;
+  transition: opacity .35s ease, transform .35s ease;
+}
+.menu-item:focus-within .menu-info { opacity: 0; }
+.menu-item:focus-within .menu-photo { opacity: 1; transform: scale(1); }
+@media (hover: hover) {
+  .menu-item:hover .menu-info { opacity: 0; }
+  .menu-item:hover .menu-photo { opacity: 1; transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .menu-info, .menu-photo { transition: none; }
+}
